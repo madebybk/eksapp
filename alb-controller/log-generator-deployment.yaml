@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "log-generator-deployment"
+  namespace: "log-generator"
+spec:
+  selector:
+    matchLabels:
+      app: "log-generator"
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: "log-generator"
+    spec:
+      containers:
+      - image: madebybk/nextjs-random-json-logger:latest
+        imagePullPolicy: Always
+        name: "log-generator"
+        ports:
+        - containerPort: 80
