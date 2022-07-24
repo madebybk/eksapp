@@ -134,7 +134,7 @@ data:
     #     Name                kinesis_streams
     #     Match               application.*
     #     region              ${AWS_REGION}
-    #     stream              kinesis-sample-logging
+    #     stream              kds-eksapp-logging
 
   dataplane-log.conf: |
     [INPUT]
