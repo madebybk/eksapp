@@ -33,30 +33,30 @@ secretsEncryption:
   keyARN: ${MASTER_ARN}
 
 managedNodeGroups:
-  # - name: managed-ng-public-01
-  #   instanceType: m5.xlarge
-  #   subnets:
-  #     - subnet-00e5bbad11a2150a1
-  #     - subnet-0034348a79c544e23
-  #     - subnet-0a866d420b4dbe935
-  #   desiredCapacity: 3
-  #   minSize: 3
-  #   maxSize: 6
-  #   volumeSize: 50
-  #   volumeType: gp3 
-  #   amiFamily: AmazonLinux2
-  #   labels:
-  #     nodegroup-type: "managed-frontend-workloads"
-  #   ssh: 
-  #     publicKeyPath: "/home/ec2-user/environment/eksapp.pub"
-  #   iam:
-  #     attachPolicyARNs:
-  #     withAddonPolicies:
-  #       autoScaler: true
-  #       cloudWatch: true
-  #       ebs: true
-  #       fsx: true
-  #       efs: true
+  - name: managed-ng-public-01
+    instanceType: m5.xlarge
+    subnets:
+      - subnet-00e5bbad11a2150a1
+      - subnet-0034348a79c544e23
+      - subnet-0a866d420b4dbe935
+    desiredCapacity: 3
+    minSize: 3
+    maxSize: 6
+    volumeSize: 50
+    volumeType: gp3 
+    amiFamily: AmazonLinux2
+    labels:
+      nodegroup-type: "managed-frontend-workloads"
+    ssh: 
+      publicKeyPath: "/home/ec2-user/environment/eksapp.pub"
+    iam:
+      attachPolicyARNs:
+      withAddonPolicies:
+        autoScaler: true
+        cloudWatch: true
+        ebs: true
+        fsx: true
+        efs: true
         
   - name: managed-ng-private-01
     instanceType: ${instance_type}
